@@ -1,23 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: todolist-frontent
+  name: todolist-frontend
   labels:
-    app: todolist-frontent
+    app: todolist-frontend
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: todolist-frontent
+      app: todolist-frontend
   template:
     metadata:
       labels:
-        app: todolist-frontent
-        version: v1
+        app: todolist-frontend
     spec:
       containers:
-      - name: todolist-frontent
-        image: garbiozyildiz/todolist-frontent:1.0.0-SNAPSHOT
+      - name: todolist-frontend
+        image: garbiozyildiz/todolist-frontend:1.0.0-SNAPSHOT
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 4200
@@ -26,16 +25,16 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: todolist-frontent
+  name: todolist-frontend
   labels:
-    app: todolist-frontent
+    app: todolist-frontend
 spec:
   type: NodePort
   ports:
   - name: http
     port: 80
     targetPort: 4200
-    nodePort: 30007
+    nodePort: 30008
     protocol: TCP
   selector:
-    app: todolist-frontent
+    app: todolist-frontend
