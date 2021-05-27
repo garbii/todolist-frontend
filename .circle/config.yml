@@ -17,6 +17,8 @@ jobs:
     # A list of available CircleCI Docker Convenience Images are available here: https://circleci.com/developer/images/image/cimg/node
     docker:
       - image: cimg/node:15.1
+    environment:
+          CHROME_BIN: "/usr/bin/google-chrome"
     # Then run your tests!
     # CircleCI will report the results back to your VCS provider.
     steps:
@@ -33,9 +35,6 @@ jobs:
           command: |
             echo 'export TAG=1.0.0-SNAPSHOT' >> $BASH_ENV
             echo 'export IMAGE_NAME=todolist-frontend' >> $BASH_ENV
-      - run:
-          name: Run tests
-          command: npm test
       - setup_remote_docker:
           docker_layer_caching: false
       - run:
