@@ -1,4 +1,4 @@
-# Use the latest 2.1 version of CircleCI pipeline process engine. 
+# Use the latest 2.1 version of CircleCI pipeline process engine 
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
@@ -46,7 +46,7 @@ jobs:
       - run:
           name: Deploy app to AWS via Ansible
           command: |
-            ssh -o StrictHostKeyChecking=no ansadmin@ec2-3-108-44-12.ap-south-1.compute.amazonaws.com | echo ansadmin "ansible-playbook -i hosts k8s-frontend-deployment.yaml "
+            sshpass -p ansadmin ssh -o StrictHostKeyChecking=no ansadmin@ec2-3-108-44-12.ap-south-1.compute.amazonaws.com "ansible-playbook -i hosts k8s-frontend-deployment.yaml "
 
 
 workflows:
