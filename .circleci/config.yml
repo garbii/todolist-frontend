@@ -46,7 +46,7 @@ jobs:
       - run:
           name: Deploy app to AWS via Ansible
           command: |
-            echo ansadmin | ssh -o StrictHostKeyChecking=no ansadmin@ec2-3-108-44-12.ap-south-1.compute.amazonaws.com "/home/ansadmin ansible-playbook -i hosts k8s-frontend-deployment.yaml "
+            ssh -o StrictHostKeyChecking=no ansadmin@ec2-3-108-44-12.ap-south-1.compute.amazonaws.com | echo ansadmin "ansible-playbook -i hosts k8s-frontend-deployment.yaml "
 
 
 workflows:
