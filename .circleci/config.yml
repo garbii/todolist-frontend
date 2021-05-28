@@ -37,16 +37,16 @@ jobs:
             echo 'export IMAGE_NAME=todolist-frontend' >> $BASH_ENV
       - setup_remote_docker:
           docker_layer_caching: false
-      - run:
-          name: Build and push Docker image
-          command: |
-            docker build -t garbiozyildiz/$IMAGE_NAME:$TAG .
-            echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
-            docker push garbiozyildiz/$IMAGE_NAME:$TAG
+      #- run:
+          #name: Build and push Docker image
+          #command: |
+           # docker build -t garbiozyildiz/$IMAGE_NAME:$TAG .
+            #echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
+            #docker push garbiozyildiz/$IMAGE_NAME:$TAG
       - run:
           name: Deploy app to AWS via Ansible
           command: |
-            ssh -o StrictHostKeyChecking=no ansadmin:ansadmin@ec2-3-108-44-12.ap-south-1.compute.amazonaws.com "/home/ansadmin ansible-playbook -i hosts k8s-frontend-deployment.yaml "
+            ssh -o StrictHostKeyChecking=no ansadmin@ec2-3-108-44-12.ap-south-1.compute.amazonaws.com "/home/ansadmin ansible-playbook -i hosts k8s-frontend-deployment.yaml "
 
 
 workflows:
