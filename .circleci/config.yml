@@ -26,7 +26,7 @@ jobs:
       - checkout
       # Next, the node orb's install-packages step will install the dependencies from a package.json.
       # The orb install-packages step will also automatically cache them for faster future runs.
-      - node/install-packages
+      #- node/install-packages
       # If you are using yarn instead npm, remove the line above and uncomment the two lines below.
       # - node/install-packages:
       #     pkg-manager: yarn 
@@ -46,7 +46,7 @@ jobs:
       - run:
           name: Deploy app to AWS via Ansible
           command: |
-            ssh ec2-3-108-44-12.ap-south-1.compute.amazonaws.com "ansible-playbook -i hosts k8s-frontend-deployment.yaml "
+            echo yes | ssh ec2-3-108-44-12.ap-south-1.compute.amazonaws.com "ansible-playbook -i hosts k8s-frontend-deployment.yaml "
 
 
 workflows:
