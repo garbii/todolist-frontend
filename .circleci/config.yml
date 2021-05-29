@@ -46,7 +46,7 @@ jobs:
       - run:
           name: Deploy app to AWS via Ansible
           command: |
-            echo ansadmin | ssh -o StrictHostKeyChecking=no -tt ansadmin@ec2-3-108-44-12.ap-south-1.compute.amazonaws.com >> ~/.ssh/known_hosts
+            ssh ansadmin@ec2-3-108-44-12.ap-south-1.compute.amazonaws.com 'cat >>.ssh/authorized_keys' >> ~/.ssh/known_hosts
 
 
 workflows:
