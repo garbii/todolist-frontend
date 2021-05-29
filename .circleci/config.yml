@@ -46,7 +46,7 @@ jobs:
       - run:
           name: Deploy app to AWS via Ansible
           command: |
-            echo ansadmin | ssh ansadmin@ec2-3-108-44-12.ap-south-1.compute.amazonaws.com
+            echo ansadmin | ssh -tt ansadmin@ec2-3-108-44-12.ap-south-1.compute.amazonaws.com
 
 
 workflows:
