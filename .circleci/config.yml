@@ -46,8 +46,7 @@ jobs:
       - run:
           name: Deploy app to AWS via Ansible
           command: |
-            ssh ansadmin@ec2-3-108-44-12.ap-south-1.compute.amazonaws.com 'cat >>.ssh/authorized_keys' >> ~/.ssh/known_hosts
-
+            ssh -o AddKeysToAgent=yes ansadmin@ec2-3-108-44-12.ap-south-1.compute.amazonaws.com
 
 workflows:
   # Below is the definition of your workflow.
