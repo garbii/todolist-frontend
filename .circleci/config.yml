@@ -49,7 +49,7 @@ jobs:
           name: Deploy app to AWS via Ansible
           command: |
             echo '15.206.178.60 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBD6Tl7GmhTVxolf0qOSMNJJGCq0PSRhO3zQjhnOkROpxrseNrJCR91JW4eWUxVF7qgfEhf4zZCiAcD8ls1uxcFU=' >> ~/.ssh/known_hosts
-            ssh -o AddKeysToAgent=yes ansadmin@ec2-3-108-44-12.ap-south-1.compute.amazonaws.com
+            ssh -o AddKeysToAgent=yes root@ec2-3-108-44-12.ap-south-1.compute.amazonaws.com
 
 workflows:
   # Below is the definition of your workflow.
