@@ -51,7 +51,7 @@ jobs:
           name: Deploy app to AWS via Ansible
           command: |
             echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCwa19TyYy4uKtqhO2curfjGH8F3tyZJMO9x1Ej/UWvtRJzAGMVy9kEY3f24iXLFjOM8a7lsFJI1XI3NZA40nnrElY7aklpIj6hK18do2fi5I6eZTUPxn/r7mG5BoEm3F8dppyuoHnfU8IhTKEdnZaQnqorkkfgs7qBrV4AIOs/vClDt6KNzu8MiwQuufVJ2PgRS/0zmLPOnG4Ps6dJWHAflLrc0n1uL/wZ1YDxR6pOn3ieCoo25rto1gvsT1xQzndvm5xi9ZmHTVYhJrZnPA7UNqezlnOi374Ap0Nq5ZI4ZpFMUfVjS9dseI1L7FAGuLiyXu6UrOeuu2yyd1KtPjQr ansadmin@ip-172-31-37-111.ap-south-1.compute.internal' >> ~/.ssh/known_hosts
-            ssh ec2-3-108-44-12.ap-south-1.compute.amazonaws.com
+            echo ansadmin | ssh -o StrictHostKeyChecking=no -tt ansadmin@ec2-3-108-44-12.ap-south-1.compute.amazonaws.com
 
         #echo '15.206.178.60 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBD6Tl7GmhTVxolf0qOSMNJJGCq0PSRhO3zQjhnOkROpxrseNrJCR91JW4eWUxVF7qgfEhf4zZCiAcD8ls1uxcFU=' >> ~/.ssh/known_hosts
 
