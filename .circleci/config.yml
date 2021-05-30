@@ -27,7 +27,7 @@ jobs:
 
       # Next, the node orb's install-packages step will install the dependencies from a package.json.
       # The orb install-packages step will also automatically cache them for faster future runs.
-      #- node/install-packages
+      - node/install-packages
       # If you are using yarn instead npm, remove the line above and uncomment the two lines below.
       # - node/install-packages:
       #     pkg-manager: yarn 
@@ -38,18 +38,14 @@ jobs:
             echo 'export IMAGE_NAME=todolist-frontend' >> $BASH_ENV
       - setup_remote_docker:
           docker_layer_caching: false
-      #- run:
-          #name: Build and push Docker image
-          #command: |
-           # docker build -t garbiozyildiz/$IMAGE_NAME:$TAG .
-            #echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
-            #docker push garbiozyildiz/$IMAGE_NAME:$TAG
 
       - run:
-          name: Install sshpass
+          name: Build and push Docker image
           command: |
-            sudo apt-get update
-            sudo apt-get install sshpass
+            docker build -t garbiozyildiz/$IMAGE_NAME:$TAG .
+            echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
+            docker push garbiozyildiz/$IMAGE_NAME:$TAG
+
       - run:
           name: Deploy app to AWS via Ansible
           command: |
