@@ -45,7 +45,12 @@ jobs:
             docker build -t garbiozyildiz/$IMAGE_NAME:$TAG .
             echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
             docker push garbiozyildiz/$IMAGE_NAME:$TAG
-
+      - run:
+          name: Install sshpass
+          command: |
+            sudo apt-get update
+            sudo apt-get install sshpass
+            
       - run:
           name: Deploy app to AWS via Ansible
           command: |
