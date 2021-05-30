@@ -1,4 +1,4 @@
-# TodoList Application
+# ToDoList FrontEnd Application
 
 Application is developed in angular2 with version 9.0.0.
 The application is developed in VSC IDE.
