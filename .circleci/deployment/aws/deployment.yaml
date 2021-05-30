@@ -17,7 +17,7 @@ spec:
       containers:
       - name: todolist-frontend
         image: garbiozyildiz/todolist-frontend:1.0.0-SNAPSHOT
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - containerPort: 4200
 
