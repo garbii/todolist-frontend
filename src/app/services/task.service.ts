@@ -9,7 +9,7 @@ import { Task } from '../shared/models/task.model';
   providedIn: 'root'
 })
 export class TaskService {
-  private taskServiceUrl = 'http://localhost:30007/';
+  private taskServiceUrl = 'http://ec2-15-206-178-60.ap-south-1.compute.amazonaws.com:30007/';
 
   // All Tasks
   Tasks$ = this.http.get<Task[]>(this.taskServiceUrl)
