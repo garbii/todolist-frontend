@@ -3,11 +3,11 @@
 Application is developed in angular2 with version 9.0.0.
 The application is developed in VSC IDE.
 
-There are two component for the application logics.
+There are two components for the application business logic.
 
-1- The component that list all tasks.
+1- The first one is the component that lists all tasks.
 
-2- The component that is used for creating new task. 
+2- The second one is used for creating new task to add list. 
 
 ## Deploying application in 3 ways.
 
@@ -51,5 +51,6 @@ will trigger the Circleci CI job. CI job will process the following steps.
 > 5- Setup environment for image name and tag
 
 > 6- Build and push docker image to DockerHub 
+
+> 7- Deploy image on AWS using Ansible
 ```
-Then process "Deploy on K8S" step to deploy application on K8S.
