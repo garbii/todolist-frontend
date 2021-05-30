@@ -54,3 +54,4 @@ will trigger the Circleci CI/CD job. CI/CD job will process the following steps.
 
 > 7- Deploy image on AWS using Ansible
 ```
+Then open your browser on *http://ec2-15-206-178-60.ap-south-1.compute.amazonaws.com:30008/*
